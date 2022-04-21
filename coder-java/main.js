@@ -1,5 +1,7 @@
-//Math.ceil(Math.random()*10)
 
+function getNumRand(min, max) {
+    return Math.round(Math.random()*(max-min) + parseInt(min))
+}
 
 function creePersonaje() {
     let saludo = confirm("Bienvenido al coliseo, por favor, preparese:")
@@ -30,30 +32,30 @@ function validarSexoM(b) {
     let seleccioneClaseM = prompt("Seleccione su clase: Guerrera Acrobata (1), Asesina (2), Hechicera (3).")
     if (b == 1) {
         alert("Ahora tire los dados para sus estadisticas:")
-        validarEstadisticasM(estadisticasM)
+        validarEstadisticasM(validarSexoM)
     } else if (b == 2) {
         alert("Ahora tire los dados para sus estadisticas:")
-        validarEstadisticasM(estadisticasM)
+        validarEstadisticasM(validarSexoM)
     } else if (b == 3) {
         alert("Ahora tire los dados para sus estadisticas:")
-        validarEstadisticasM(estadisticasM)
+        validarEstadisticasM(validarSexoM)
     } else 
         alert("Por favor seleccione una clase.")
         validarSexoM(true)
-        return (validarSexoM)
+        return (creePersonaje)
 }
 
 function validarSexoH(c) {
     let seleccioneClaseH = prompt("Seleccione su clase: Guerrero (1), Paladin (2), Warlock (3).")
     if (c == 1) {
         alert("Ahora tire los dados para sus estadisticas:")
-        validarEstadisticasH(estadisticasH)
+        validarEstadisticasH(validarSexoH)
     } else if (c == 2) {
         alert("Ahora tire los dados para sus estadisticas:")
-        validarEstadisticasH(estadisticasH)
+        validarEstadisticasH(validarSexoH)
     } else if (c == 3) {
         alert("Ahora tire los dados para sus estadisticas:")
-        validarEstadisticasH(estadisticasH)
+        validarEstadisticasH(validarSexoH)
     } else
     alert("Por favor seleccione una clase.")
     validarSexoH(true)
@@ -61,11 +63,26 @@ function validarSexoH(c) {
 }
 
 function validarEstadisticasM(dados) {
-    let estadisticasM = alert("Ahora veremos las estadisticas dejadas al azar:")
-    if (dados) {
-        let azar = alert(Math.ceil(Math.random()*10))
-    }
+    let azar = alert("Tire los dados")
+        while(dados != "") {
+            let dado1 = getNumRand(4, 10);
+            let dado2 = getNumRand(4, 10);
+            let dado3 = getNumRand(4, 10);
+            let dado4 = getNumRand(4, 10);
+            let dado5 = getNumRand(4, 10);
+            let dado6 = getNumRand(4, 10);
+        }
+    alert("Sus estadisticas.")
+}
 
+function validarEstadisticasH(dados) {
+    let dado1 = getNumRand(4, 10);
+    let dado2 = getNumRand(4, 10);
+    let dado3 = getNumRand(4, 10);
+    let dado4 = getNumRand(4, 10);
+    let dado5 = getNumRand(4, 10);
+    let dado6 = getNumRand(4, 10);
+    alert(dado1, dado2, dado3, dado4, dado5, dado6)
 }
 
 
