@@ -1,6 +1,5 @@
-
-function getNumRand(min, max) {
-    return Math.round(Math.random()*(max-min) + parseInt(min))
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function creePersonaje() {
@@ -24,12 +23,14 @@ function seleccioneSexo(a) {
     } else {
         alert("Decides que no quieres entrar, mueres en el acto.")
         creePersonaje(true)
-        return(creePersonaje)
+        return (creePersonaje)
     }
 }
 
+const clasesM = ["Guerrera Acrobata (1)", "Asesina (2)", "Hechicera (3)."]
+
 function validarSexoM(b) {
-    let seleccioneClaseM = prompt("Seleccione su clase: Guerrera Acrobata (1), Asesina (2), Hechicera (3).")
+    let clasesM = prompt("Seleccione su clase: Guerrera Acrobata (1), Asesina (2), Hechicera (3).")
     if (b == 1) {
         alert("Ahora tire los dados para sus estadisticas:")
         validarEstadisticasM(validarSexoM)
@@ -39,14 +40,20 @@ function validarSexoM(b) {
     } else if (b == 3) {
         alert("Ahora tire los dados para sus estadisticas:")
         validarEstadisticasM(validarSexoM)
+    } else if (b == "") {
+        alert("Por favor seleccione una clase")
+        validarEstadisticasM(validarSexoM)
+        return (creePersonaje)
     } else 
         alert("Por favor seleccione una clase.")
-        validarSexoM(true)
-        return (creePersonaje)
+    validarSexoM(true)
+    return (creePersonaje)
 }
 
+const clasesH = ["Guerrero (1)", "Paladin (2)", "Warlock (3)."]
+
 function validarSexoH(c) {
-    let seleccioneClaseH = prompt("Seleccione su clase: Guerrero (1), Paladin (2), Warlock (3).")
+    let clasesH = prompt("Seleccione su clase: Guerrero (1), Paladin (2), Warlock (3).")
     if (c == 1) {
         alert("Ahora tire los dados para sus estadisticas:")
         validarEstadisticasH(validarSexoH)
@@ -56,35 +63,44 @@ function validarSexoH(c) {
     } else if (c == 3) {
         alert("Ahora tire los dados para sus estadisticas:")
         validarEstadisticasH(validarSexoH)
-    } else
-    alert("Por favor seleccione una clase.")
+    } else if (c == "") {
+        alert("Por favor seleccione una clase")
+        validarEstadisticasH(validarSexoH)
+        return (creePersonaje)
+    } else 
+        alert("Por favor seleccione una clase.")
     validarSexoH(true)
-    return (validarSexoM)
+    return (creePersonaje)
 }
 
-function validarEstadisticasM(dados) {
-    let azar = alert("Tire los dados")
-        while(dados != "") {
-            let dado1 = getNumRand(4, 10);
-            let dado2 = getNumRand(4, 10);
-            let dado3 = getNumRand(4, 10);
-            let dado4 = getNumRand(4, 10);
-            let dado5 = getNumRand(4, 10);
-            let dado6 = getNumRand(4, 10);
-        }
-    alert("Sus estadisticas.")
+function validarEstadisticasM(dados){
+    let dado1 = getRandom(4,10)
+    let dado2 = getRandom(4,10)
+    let dado3 = getRandom(4,10)
+    let dado4 = getRandom(4,10)
+    let dado5 = getRandom(4,10)
+    let dado6 = getRandom(4,10)
+    alert(dado1)
+    alert(dado2)
+    alert(dado3)
+    alert(dado4)
+    alert(dado5)
+    alert(dado6)
 }
 
-function validarEstadisticasH(dados) {
-    let dado1 = getNumRand(4, 10);
-    let dado2 = getNumRand(4, 10);
-    let dado3 = getNumRand(4, 10);
-    let dado4 = getNumRand(4, 10);
-    let dado5 = getNumRand(4, 10);
-    let dado6 = getNumRand(4, 10);
-    alert(dado1, dado2, dado3, dado4, dado5, dado6)
+function validarEstadisticasH(dados){
+    let dado1 = getRandom(4,10)
+    let dado2 = getRandom(4,10)
+    let dado3 = getRandom(4,10)
+    let dado4 = getRandom(4,10)
+    let dado5 = getRandom(4,10)
+    let dado6 = getRandom(4,10)
+    alert(dado1)
+    alert(dado2)
+    alert(dado3)
+    alert(dado4)
+    alert(dado5)
+    alert(dado6)
 }
-
-
 
 creePersonaje()
