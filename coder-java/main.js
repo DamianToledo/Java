@@ -1,6 +1,11 @@
+
+
 function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+window.addEventListener("keyup", ev => {
+    if (ev.keyCode === 38) 
+{ 
 
 function creePersonaje() {
     let saludo = confirm("Bienvenido al coliseo, por favor, preparese:")
@@ -86,7 +91,7 @@ function validarEstadisticasM(dados){
     alert(dado4)
     alert(dado5)
     alert(dado6)
-}
+} 
 
 function validarEstadisticasH(dados){
     let dado1 = getRandom(4,10)
@@ -101,6 +106,12 @@ function validarEstadisticasH(dados){
     alert(dado4)
     alert(dado5)
     alert(dado6)
-}
+} 
 
-creePersonaje()
+creePersonaje() 
+
+document.body.innerHTML = "<h1 id='gameOn'>BIENVENIDO</h1>"
+}
+});
+
+

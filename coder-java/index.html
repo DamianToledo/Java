@@ -5,20 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title></link>
 </head>
 
 <body>
-    <div id="res"></div>
-
-    <h2>JavaScript Math.random()</h2>
-
-    <p>Every time you click the button, getRndInteger(min, max) returns a random number between 1 and 10 (both
-        included):</p>
-
-    <button onclick="document.getElementById('demo').innerHTML = getRndInteger(1,10)">Click Me</button>
-
-    <p id="demo"></p>
+    <div id="startScreen">
+        <div>
+            <h1>Coliseum Game</h1>
+        </div>
+        <div>
+            <p>Bienvenido al coliseo, por favor, preparese:<br />Presione (<span>&uarr;</span>) para comenzar</p>
+        </div>
+    </div>
+    <div>
+        <p class="inicio">Entre al coliseo</p>
+        <button onclick="siguiente()">Siguiente</button>
+    </div>
 
     <script src="main.js"></script>
 </body>
